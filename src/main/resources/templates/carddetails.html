@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="http://cdn.jsdelivr.net/webjars/bootstrap/3.3.6/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.6/css/bootstrap.min.css}"
+          rel="stylesheet" media="screen"/>
+
+    <link href="../static/css/app.css" th:href="@{css/app.css}" rel="stylesheet" media="screen"/>
+    <title>HS Card Details</title>
+</head>
+<body>
+
+<div class="panel panel-default">
+    <div class="panel-heading">HS Card</div>
+
+    <div class="thumbnail">
+        <img th:src="@{'/photos/' + ${card.cardId} + '.jpg'}"/>
+        <div class="caption">
+            <table class="table">
+                <tr>
+                    <th>Attribute</th>
+                    <th>Value</th>
+                </tr>
+
+                <tr>
+                    <td>Card Name</td>
+                    <td th:text="${card.name}"></td>
+                </tr>
+
+                <tr>
+                    <td>Card Image</td>
+                    <td th:text="${card.img}"></td>
+                </tr>
+
+                <tr>
+                    <td>Card Type</td>
+                    <td th:text="${card.type}"></td>
+                </tr>
+
+                <tr>
+                    <td>Card Text</td>
+                    <td th:text="${card.text}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>

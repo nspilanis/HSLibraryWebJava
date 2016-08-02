@@ -1,5 +1,30 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400);
 
+html, body{height:100%; margin:0;padding:0}
+
+.container-fluid{
+    height:100%;
+    display:table;
+    width: 100%;
+    padding: 0;
+}
+
+.row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+.centering {
+    float:none;
+    margin:0 auto;
+}
+
+.full {
+    background: url('http://www.gosugamers.net/files/images/news/2015/january/4c3e7833837ce00754926aeb3d1d44a3_large%20(1).jpeg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    height:100%;
+}
+
 body {
     background-color:#fff;
     -webkit-font-smoothing: antialiased;
@@ -12,6 +37,7 @@ body {
 }
 
 .form-login {
+    width: 400px;
     background-color: #EDEDED;
     padding-top: 10px;
     padding-bottom: 20px;
