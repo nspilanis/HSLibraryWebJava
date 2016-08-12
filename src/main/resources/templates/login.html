@@ -27,11 +27,17 @@
         <div class="form-login centering">
             <h4>Welcome back.</h4>
             <form th:action="@{/login}" method="post">
-                <input type="text" name="username" id="userName" class="form-control input-sm chat-input"
-                       placeholder="username"/>
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
+                    <input type="text" name="username" id="userName" class="form-control input-sm chat-input"
+                           aria-describedby="basic-addon1" placeholder="username"/>
+                </div>
                 <br/>
-                <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input"
-                       placeholder="password"/>
+                <div class="input-group">
+                    <span class="input-group-addon glyphicon glyphicon-asterisk" id="basic-addon2"></span>
+                    <input type="password" name="password" id="userPassword" class="form-control input-sm chat-input"
+                           aria-describedby="basic-addon2" placeholder="password"/>
+                </div>
                 <br/>
                 <div class="wrapper">
                     <span class="group-btn">
