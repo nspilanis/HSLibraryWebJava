@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Security Example</title>
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css"/>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+        html, body{height:100%; margin:0;padding:0;}
+        body {background: url("http://media.blizzard.com/hearthstone/facebook-share-og.jpg")
+        no-repeat center fixed;
+            background-size: cover;
+        }
+        label{
+            display: table-caption;
+        }
+        input{
+            align: right;
+        }
+
+        .container-fluid{
+            height:100%;
+            display:table;
+            width: 100%;
+            padding: 20px;
+        }
+        .row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
+
+        .centering {
+            float:none;
+            margin:0 auto;
+        }
+
+        .form-login {
+            width: 400px;
+            background-color: #EDEDED;
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+            border-radius: 15px;
+            border-color:#d2d2d2;
+            border-width: 5px;
+            box-shadow:0 1px 0 #cfcfcf;
+        }
+    </style>
+</head>
+<body>
+   <div th:if="${param.error}" class="alert alert-danger">
+       <strong>Invalid username and password.</strong>
+   </div>
+   <div th:if="${param.logout}">
+       You have been logged out.
+   </div>
+   <div class="container-fluid">
+      <div class="row-fluid">
+         <div class="form-login centering">
+            <form th:action="@{/login}" method="post">
+                <div><label> User Name : <input type="text" name="username"/> </label></div>
+                <div><label> Password: <input type="password" name="password"/> </label></div>
+                <div><input type="submit" value="Sign In"/></div>
+             </form>
+         </div>
+      </div>
+   </div>
+</body>
+</html>

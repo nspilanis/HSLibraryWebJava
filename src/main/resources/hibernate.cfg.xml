@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-config PUBLIC
+        "-//Hibernate/Hibernate Config DTD 3.1//EN"
+        "http://www.hibernate.org/dtd/hibernate-config-3.1.dtd">
+<hibernate-config>
+    <session-factory> <!-- Database connection settings -->
+        <property name="connection_pool_size">true</property> <!-- SQL dialect -->
+        <property name="cache.provider_class">org.hibernate.NoCacheProvider</property> <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">1</property> <!-- Drop and re-create the database schema on startup -->
+        <property name="hbmdl.auto">update</property> <!-- Names the annotated entity class -->
+        <mapping class="com.ajo.common_dto.TestTable"/>
+    </session-factory>
+</hibernate-config>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8" />
+    <title>HeartStone</title>
+    <link rel="stylesheet" href="webjars/bootstrap/3.3.7/css/bootstrap.css"/>
+    <script src="webjars/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <style>
+        body {background: url("http://us.battle.net/hearthstone/static/images/media/wallpapers/ipad_wallpaper1024x768.jpg?v=58-15")
+        no-repeat center fixed;
+            background-size: cover;
+        }
+        .container-fluid{
+            height:100%;
+            display:table;
+            width: 100%;
+            padding: 20px;
+    </style>
+</head>
+<body>
+<script th:inline="javascript">
+    function selected_value(formatTxt)
+    {
+        /*<![CDATA[*/
+        var radio_value;
+        var radios = document.getElementsByName("searchmethod");
+        for (var i=0, len=radios.length; i<len; i++) {
+            if (radios[i].checked) {
+                radio_value = radios[i].value;
+                break;
+            }
+        }
+        if (formatTxt == "html"){
+            window.location.href = "/searchBy.html?critiria=" + radio_value + "&searchTxt=" + document.getElementById("searchTxt").value;
+        }else if (formatTxt == "json"){
+            window.location.href = "/searchBy.json?critiria=" + radio_value + "&searchTxt=" + document.getElementById("searchTxt").value;
+        }
+
+        /*]]>*/
+    }
+</script>
+<nav class="navbar navbar-inverse navbar-fixed-left">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/search">Search</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <h2>Select the Desired Search Crititia and Press "SUBMIT"</h2>
+    <form role="form" id="myForm">
+        <div class="radio">
+            <input type="radio" value="CardSet" name="searchmethod">CardSet</input>
+        </div>
+        <div class="radio">
+            <input type="radio" value="Name" name="searchmethod">Name</input>
+        </div>
+        <div class="radio">
+            <input type="radio" value="Artist" name="searchmethod">Artist</input>
+        </div>
+        <div class="radio">
+            <input type="radio" value="Type" name="searchmethod">Type</input>
+        </div>
+        <div class="radio">
+            <input type="radio" value="Rarity" name="searchmethod">Rarity</input>
+        </div>
+        <div class="radio">
+            <input type="radio" value="PlayerClass" name="searchmethod">PlayerClass</input>
+        </div>
+        <div class="radio">
+            <input type="text" id="searchTxt" title="Type search critiria here"/>
+        </div>
+    </form>
+    <button onclick="selected_value('html');">SHOW RESULTS IN A PAGE</button>
+    <button onclick="selected_value('json');">SHOW RESULTS IN A JSON</button>
+</div>
+</body>
+</html>
