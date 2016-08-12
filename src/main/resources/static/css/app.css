@@ -1,12 +1,17 @@
 @import url(http://fonts.googleapis.com/css?family=Roboto:400);
 
-html, body{height:100%; margin:0;padding:0}
+html, body{height:100%; margin:0;padding:0;}
 
 .container-fluid{
     height:100%;
     display:table;
     width: 100%;
-    padding: 0;
+    padding: 20px;
+}
+
+.panel{
+    background-color: transparent;
+    margin: 20px;
 }
 
 .row-fluid {height: 100%; display:table-cell; vertical-align: middle;}
@@ -16,6 +21,11 @@ html, body{height:100%; margin:0;padding:0}
     margin:0 auto;
 }
 
+body {
+    -webkit-font-smoothing: antialiased;
+    font: normal 12px Roboto,arial,sans-serif;
+}
+
 .full {
     background: url('http://www.gosugamers.net/files/images/news/2015/january/4c3e7833837ce00754926aeb3d1d44a3_large%20(1).jpeg') no-repeat center center fixed;
     -webkit-background-size: cover;
@@ -23,12 +33,6 @@ html, body{height:100%; margin:0;padding:0}
     background-size: cover;
     -o-background-size: cover;
     height:100%;
-}
-
-body {
-    background-color:#fff;
-    -webkit-font-smoothing: antialiased;
-    font: normal 14px Roboto,arial,sans-serif;
 }
 
 .container {
@@ -63,3 +67,4 @@ h4 {
 .wrapper {
     text-align: center;
 }
+
